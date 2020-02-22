@@ -40,8 +40,8 @@ extension UIView {
         let imageDataPointer: UnsafePointer<UInt8> = CFDataGetBytePtr(imageData)
         var transparentPixelCount = 0
 
-        for x in 0...width {
-            for y in 0...height {
+        for x in 0..<width {
+            for y in 0..<height {
                 let pixelDataPosition = ((width * y) + x) * 4
                 // The alpha value is the last 8 bits of the data
                 let alphaValue = imageDataPointer[pixelDataPosition + 3]
